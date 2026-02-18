@@ -1,0 +1,26 @@
+ - Declate variables to be used in the program.
+ - Create a Scanner object variable to allow input from keyboard.
+
+INPUT:
+ - Display the message on the screen: "Welcome to Andrea's Bakery!"
+ - Display the menu options:
+    * " - Cream Puff: 2 dollars and 50 cents"
+    * " - Eclair: 5 dollars and 50 cents"
+	* " - Macaron: 2 dollars"
+	* " - Croissant: 3 dollars and 50 cents"
+
+ - Display the messages (where | is user input):
+    * "How many Cream Puffs? |"
+    * "How many Eclair? |"
+    * "How many Macaron? |"
+    * "How many Croissant? |"
+
+PROCESS:
+ - Compute the subtotal by adding the product of the price of each item and the number of each item.
+ - Compute the tax by multiplying the subtotal by the tax rate.
+ - Compute the total by adding the subtotal and tax.
+
+OUTPUT:
+ - Display the message "Subtotal: ### dollars and ### cents"
+ - Display the message "Tax: ### dollars and ### cents"
+ - Display the message "Total: ### dollars and ### cents"

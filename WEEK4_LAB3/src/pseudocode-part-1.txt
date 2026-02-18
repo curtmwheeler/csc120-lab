@@ -1,0 +1,32 @@
+BallReach.java pseudocode:
+
+- Declare variables
+- Create Scanner object to allow input from keyboard
+
+INPUT
+ - Angle: angle at which ball is thrown
+ - Speed: speed at which ball is thrown at (ms^-1)
+ - Height: the initial height at which the ball is thrown
+
+PROCESS:
+ - Compute the upward velocity component (speed/gravity)
+ - Compute the downward component distance height + (gravity * upward_time * upward_time) / 2
+ - Compute the downward velocity component duration
+ - Compute the total duration (upward duration + downward duration)
+ - Compute the upward component distance (downward component distance (max height) - height)
+ - Compute the y velocity component (speed * sin(angle))
+ - Compute the x velocity component (speed * cos(angle))
+ - compute() method orchestrates all these computations
+
+OUTPUT:
+ - Display for both Earth and Moon gravities (Earth: 9.81 ms^-2, Moon: 1.62 ms^-2)
+    * Height of cliff
+    * Horizontal speed
+    * Initial vertical speed
+    * Gravity
+    * Upward time
+    * Upward distance
+    * Downward time
+    * Downward distance
+    * Total time
+    * Horizontal distance
