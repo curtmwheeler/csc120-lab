@@ -74,6 +74,9 @@ public class CatchThief {
                 policeColumn += 1;
                 policeRow += 1;
                 break;
+            default:
+                policeColumn += 0;
+                policeRow += 0;
         }
     } // End of getPolicePositionInput method
 
@@ -108,13 +111,19 @@ public class CatchThief {
         };
 
         System.out.printf("Your choices are %s: ", userChoices);
-        String userChoice = in.next().toUpperCase();
+        String userChoice = in.next();
 
-        if (!Arrays.asList(userChoicesArray).contains(userChoice)) {
-            System.out.printf("Invalid input \"%s\". ", userChoice);
-            getPolicePositionInput();
+        while (
+            !Arrays.asList(userChoicesArray).contains(userChoice.toUpperCase())
+        ) {
+            System.out.printf(
+                "Invalid input \"%s\". Your choices are %s: ",
+                userChoice,
+                userChoices
+            );
+            userChoice = in.next();
         }
-        return userChoice;
+        return userChoice.toUpperCase();
     } // End of getPolicePositionInput method
 
     private static String getCoordinatePositionsAsString() {
