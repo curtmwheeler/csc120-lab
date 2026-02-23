@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        lab: [WEEK1_LAB1, WEEK3_LAB2, WEEK4_LAB3, WEEK5_LAB4, WEEK6_LAB5, WEEK7_LAB6]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Compile ${{ matrix.lab }}
+        run: javac ${{ matrix.lab }}/src/*.java
