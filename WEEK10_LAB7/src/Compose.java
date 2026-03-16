@@ -67,7 +67,11 @@ public class Compose {
                 );
             }
 
-            result *= Math.pow(baseInteger, exponent);
+            long factor = 1;
+            for (int i = 0; i < exponent; i++) {
+                factor *= baseInteger;
+            }
+            result *= factor;
 
             prevBase = baseInteger;
         }
