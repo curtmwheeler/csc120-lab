@@ -20,7 +20,7 @@ This repository contains weekly lab assignments for CSC 120. Each lab focuses on
 
 ## Overview
 
-The labs progress from introductory Java (printing, variables, `Scanner` input) to more structured programs (classes, methods, algorithms). Source code lives under each `WEEKn_LABm/src/` directory, and some labs include pseudocode or design documents to support implementation.
+The labs progress from introductory Java (printing, variables, `Scanner` input) to more structured programs (classes, methods, algorithms). Source code lives under each `WEEKn_LABm/src/` directory, and some labs include pseudocode or design documents to support implementation. All Java files are documented with Javadoc (class and method descriptions, parameters, and return values).
 
 ---
 
@@ -63,10 +63,14 @@ CSC120_LAB/
 ├── WEEK6_LAB5/               # Week 6 – Lab 5
 │   ├── src/
 │   └── WEEK6_LAB5.iml
-└── WEEK7_LAB6/               # Week 7 – Lab 6
+├── WEEK7_LAB6/               # Week 7 – Lab 6
+│   ├── src/
+│   ├── README.md             # Lab 6 project plan & spec
+│   └── WEEK7_LAB6.iml
+└── WEEK10_LAB7/              # Week 10 – Lab 7
     ├── src/
-    ├── README.md             # Lab 6 project plan & spec
-    └── WEEK7_LAB6.iml
+    ├── README.md             # Lab 7 plan
+    └── WEEK10_LAB7.iml
 ```
 
 ---
@@ -134,6 +138,16 @@ CSC120_LAB/
   - `TUI.java` – TUI for menu and formatted output.
 - **Spec**: `WEEK7_LAB6/README.md` contains the full project plan, algorithms, variable tables, formatting rules, test cases, and complexity notes.
 
+### Week 10 – Lab 7: Prime Factorization and Composition
+
+- **Location**: `WEEK10_LAB7/src/`
+- **Topics**: Prime numbers, string parsing, factorization, expression evaluation.
+- **Files**:
+  - `Compose.java` – converts prime-factorization expressions (e.g. `2^3 * 5 * 7^2`) to their numeric value; accepts input in a loop until the user enters `\q`.
+  - `Factor.java` – computes the prime factorization of positive integers and prints them in `base^exponent` form; runs until the user enters -1.
+  - `TUI.java` – shared terminal UI utilities (used by Compose and Factor for headers).
+- **Plan**: `WEEK10_LAB7/README.md` outlines the lab.
+
 ---
 
 ## Running the Code
@@ -158,7 +172,7 @@ CSC120_LAB/
 ## Project Configuration
 
 - **IDE**: IntelliJ IDEA (`.idea/`, `*.iml`). `.gitignore` excludes build outputs (`out/`, `bin/`), IDE-specific caches, and OS files (e.g. `.DS_Store`).
-- **Modules**: One IntelliJ module per lab (`WEEK1_LAB1` through `WEEK7_LAB6`), each with its own `src` directory.
+- **Modules**: One IntelliJ module per lab (`WEEK1_LAB1` through `WEEK10_LAB7`), each with its own `src` directory.
 
 ---
 
