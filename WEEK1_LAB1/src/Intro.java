@@ -1,4 +1,13 @@
+/**
+ * Prints a short introduction for a person named John (age, food, hobby, birthplace).
+ */
 public class Intro {
+
+    /**
+     * Entry point: prints several lines introducing John.
+     *
+     * @param args command-line arguments (unused).
+     */
     public static void main(String[] args) {
         System.out.println("Let me introduce John.");
         System.out.println("John is a friend.");

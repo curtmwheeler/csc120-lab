@@ -1,18 +1,29 @@
 import java.util.Scanner;
 
+/**
+ * Computes Taylor series approximations for square root, cube root, and natural logarithm.
+ * Prompts for base, delta, and number of terms (or delta/n for log), then prints term-by-term
+ * approximations and compares with the expected value.
+ */
 public class Taylor {
 
     // Class Constants
+    /** Width used for TUI formatting. */
     private static final int TERMINAL_VIEWPORT = 100;
+    /** TUI helper for headers and section titles. */
     private static final TUI tui = new TUI(TERMINAL_VIEWPORT);
+    /** Scanner for reading user input. */
     private static final Scanner in = new Scanner(System.in);
+    /** Base point (a) for the series; delta (δ); current approximation; series coefficient, exponent, power terms. */
     private static double base, delta, approximation, coefficient, exponent, power, delta_power, expected;
+    /** Running factorial used in series terms. */
     private static long factorial = 1;
+    /** Number of terms to compute; current round/term index. */
     private static int num_terms,
         round = 1;
 
     /**
-     *
+     * Computes the Taylor approximation of sqrt(base + delta) and prints each term and the final comparison.
      */
     private static void approximateSquareRoot() {
         coefficient = 1;
@@ -42,7 +53,7 @@ public class Taylor {
     } // End of approximateSquareRoot method
 
     /**
-     *
+     * Computes the Taylor approximation of the cube root of (base + delta) and prints each term and the final comparison.
      */
     private static void approximateCubeRoot() {
         coefficient = 1;
@@ -72,7 +83,8 @@ public class Taylor {
     } // End of approximateCubeRoot method
 
     /**
-     *
+     * Computes the Taylor approximation of ln(1 + delta) and prints each term and the final comparison.
+     * Prompts for delta and number of terms inside this method.
      */
     private static void approximateLogarithm() {
         System.out.print("Enter the value of delta (δ): ");
@@ -106,7 +118,9 @@ public class Taylor {
     } // End of approximateLogarithm method
 
     /**
+     * Displays a menu (Square Root, Cube Root, Logarithm) and returns the user's numeric choice (1–3).
      *
+     * @return the user's choice (1, 2, or 3).
      */
     private static int menu() {
         tui.sectionHeader("Menu Options");
@@ -120,7 +134,7 @@ public class Taylor {
     } // End of menu method
 
     /**
-     *
+     * Prompts the user for base (a), delta (δ), and number of terms (n) and sets the static variables.
      */
     private static void getTaylorSeriesParameters() {
         System.out.print("Enter the value of base (a): ");
@@ -132,14 +146,20 @@ public class Taylor {
     }
 
     /**
+     * Prints one line of computation output for a given round and approximation value.
      *
-     * @param round
-     * @param approx
+     * @param round the term index (round number).
+     * @param approx the current approximation value.
      */
     private static void computationOutput(int round, double approx) {
         System.out.printf("Round=%03d, approx=%.15f%n", round, approx);
     }
 
+    /**
+     * Entry point: shows menu, then runs the chosen Taylor approximation (square root, cube root, or logarithm).
+     *
+     * @param args command-line arguments (unused).
+     */
     public static void main(String[] args) {
         tui.programHeader("Week 7 Lab 6");
         int choice = menu();

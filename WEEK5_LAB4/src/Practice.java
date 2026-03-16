@@ -1,7 +1,15 @@
 import java.util.Scanner;
 
+/**
+ * Practice for Week 5 Lab 4: reads four real numbers and reports which input is the maximum.
+ */
 public class Practice {
 
+    /**
+     * Entry point: reads four numbers and prints which one is the max (Input 1–4).
+     *
+     * @param args command-line arguments (unused).
+     */
     public static void main(String[] args) {
         TUI tui = new TUI(100);
         Scanner in = new Scanner(System.in);
@@ -23,6 +31,14 @@ public class Practice {
         showRanking(input1, input2, input3, input4);
     } // end of main method
 
+    /**
+     * Determines which of the four values is largest and prints "Input N is the max."
+     *
+     * @param input1 first value.
+     * @param input2 second value.
+     * @param input3 third value.
+     * @param input4 fourth value.
+     */
     public static void showRanking(
         double input1,
         double input2,

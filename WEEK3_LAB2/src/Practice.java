@@ -1,5 +1,13 @@
+/**
+ * Practice for Week 3 Lab 2: demonstrates formatting subtotal as dollars and cents.
+ */
 public class Practice {
 
+    /**
+     * Entry point: prints a subtotal and its dollar/cents breakdown.
+     *
+     * @param args command-line arguments (unused).
+     */
     public static void main(String[] args) {
         System.out.println("WEEK 3 - LAB 2 PRACTICE");
 

@@ -1,7 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * Solves a 2x2 system of linear equations (ax + by = p, cx + dy = q) by reading
+ * coefficients from the user and printing the solution (x, y).
+ */
 public class LinearEquation {
 
+    /**
+     * Entry point: prompts for coefficients a,b,p and c,d,q, then computes and prints (x, y).
+     *
+     * @param args command-line arguments (unused).
+     */
     public static void main(String[] args) {
         // Program Header
         System.out.println("WEEK 3 - LAB 2, PART 1");

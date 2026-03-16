@@ -1,7 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * Simulates a bakery order: reads quantities of cream puffs, eclairs, macarons, and croissants,
+ * then computes and prints subtotal, tax, and total.
+ */
 public class AndreaBakery {
 
+    /**
+     * Entry point: displays menu, reads order quantities, then prints subtotal, tax, and total.
+     *
+     * @param args command-line arguments (unused).
+     */
     public static void main(String[] args) {
         // Program Header
         System.out.println("WEEK 3 - LAB 2, PART 2");

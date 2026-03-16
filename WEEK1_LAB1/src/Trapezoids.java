@@ -1,4 +1,14 @@
+/**
+ * Computes and prints the area of trapezoids using integer and double values,
+ * demonstrating the formula (top + bottom) * height / 2.
+ */
 public class Trapezoids {
+
+    /**
+     * Entry point: computes trapezoid areas for sample integer and double dimensions and prints them.
+     *
+     * @param args command-line arguments (unused).
+     */
     public static void main(String[] args) {
         // Variable declaration
         int heightOne, bottomOne, topOne, areaOne;
