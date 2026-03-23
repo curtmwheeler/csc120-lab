@@ -10,14 +10,14 @@ public class Birthday {
         }
 
         return rawResult;
-    }
+    } // end of generateRawResult method
 
     private static boolean hasDuplicate(int[] intArray) {
         for (int i = 0; i < intArray.length; i++) {
             if (intArray[i] > 1) return true;
         }
         return false;
-    }
+    } // end of hasDuplicate method
 
     private static double experiment(int nPeople, int nPlaces, int nReps) {
         int nDuplicates = 0;
@@ -29,7 +29,7 @@ public class Birthday {
         }
 
         return (double) nDuplicates / nReps;
-    }
+    } // end of experiment method
 
     public static void main(String[] args) {
         TUI tui = new TUI(100);
@@ -52,5 +52,5 @@ public class Birthday {
             System.out.print("Try again? (y/n): ");
             tryAgain = in.next();
         }
-    }
-}
+    } // end of main method
+} // end of Birthday class
