@@ -34,11 +34,11 @@ public class Birthday {
     public static void main(String[] args) {
         TUI tui = new TUI(100);
         Scanner in = new Scanner(System.in);
-        String tryAgain = "y";
+        String tryAgain;
 
         tui.programHeader("Week 11 Lab 8: Birthday Paradox");
 
-        while (tryAgain.toLowerCase().equals("y")) {
+        do {
             System.out.print("Enter the no. of people: ");
             int nPeople = in.nextInt();
             System.out.print("Enter the no. of places: ");
@@ -51,6 +51,6 @@ public class Birthday {
             );
             System.out.print("Try again? (y/n): ");
             tryAgain = in.next();
-        }
+        } while (tryAgain.toLowerCase().equals("y"));
     } // end of main method
 } // end of Birthday class
