@@ -15,19 +15,19 @@ public class Election {
             if (names[i].equalsIgnoreCase(name)) return i;
         }
         return -1;
-    }
+    } // End of find method
 
     private static String[] addName(String[] names, String name) {
         String[] newNames = Arrays.copyOf(names, names.length + 1);
         newNames[names.length] = name;
         return newNames;
-    }
+    } // End of addName method
 
     private static int[] addNewCount(int[] counts) {
         int[] newCounts = Arrays.copyOf(counts, counts.length + 1);
         newCounts[counts.length] = 1;
         return newCounts;
-    }
+    } // End of addNewCount method
 
     private static void findWinner(String[] names, int[] counts) {
         tui.sectionHeader("Election Results");
@@ -44,29 +44,29 @@ public class Election {
         }
 
         printWinner(names[theWinner]);
-    }
+    } // End of findWinner method
 
     // Helper Functions
 
     private static void printNameWithVotes(String name, int votes) {
         System.out.printf("%s recieved %d votes%n", name, votes);
-    }
+    } // End of printNameWithVotes method
 
     private static void printWinner(String name) {
         System.out.printf("The winner is %s!%n", name);
-    }
+    } // End of printWinner method
 
     private static boolean useFile() {
         System.out.print("Use a file? [Y/n] > ");
         String response = in.nextLine();
         return response.toLowerCase().startsWith("y") ? true : false;
-    }
+    } // End of useFile method
 
     private static String promptFileName() {
         System.out.print("Enter the file path > ");
         String filename = in.nextLine();
         return filename;
-    }
+    } // End of promptFileName method
 
     private static void getVotesFromFile(String filename) {
         File file = new File(filename);
@@ -89,7 +89,7 @@ public class Election {
         } catch (FileNotFoundException e) {
             System.out.printf("ERROR: Could not read file \"%s\"%n", filename);
         }
-    }
+    } // End of getVotesFromFile method
 
     private static void getVotesFromUser() {
         tui.sectionHeader("Enter the votes, one vote per line.");
@@ -116,7 +116,7 @@ public class Election {
         } else {
             System.out.println("No votes entered.");
         }
-    }
+    } // End of getVotesFromUser method
 
     public static void main(String[] args) {
         tui.programHeader("Week 12 & 13 - Lab 9");
@@ -126,5 +126,5 @@ public class Election {
         } else {
             getVotesFromUser();
         }
-    }
-}
+    } // End of main method
+} // End of Election class
