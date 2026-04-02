@@ -18,13 +18,23 @@ public class Election {
     } // End of find method
 
     private static String[] addName(String[] names, String name) {
-        String[] newNames = Arrays.copyOf(names, names.length + 1);
+        String[] newNames = new String[names.length + 1];
+
+        for (int i = 0; i < names.length; i++) {
+            newNames[i] = names[i];
+        }
+
         newNames[names.length] = name;
         return newNames;
     } // End of addName method
 
     private static int[] addNewCount(int[] counts) {
-        int[] newCounts = Arrays.copyOf(counts, counts.length + 1);
+        int[] newCounts = new int[counts.length + 1];
+
+        for (int i = 0; i < counts.length; i++) {
+            newCounts[i] = counts[i];
+        }
+
         newCounts[counts.length] = 1;
         return newCounts;
     } // End of addNewCount method
