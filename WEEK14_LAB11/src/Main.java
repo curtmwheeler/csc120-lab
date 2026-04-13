@@ -1,42 +1,43 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 /* The main class */
 
 public class Main {
-  public static void main( String[] args )
-      throws IOException {
-    Historical data = new Historical();
-    int yLow, yHigh;
-    int mLow, mHigh;
-    int dLow, dHigh;
-    String w;
-    Scanner keyboard;
 
-    keyboard = new Scanner( System.in );
+    public static void main(String[] args) throws IOException {
+        Historical data = new Historical();
+        int yLow, yHigh;
+        int mLow, mHigh;
+        int dLow, dHigh;
+        String w;
+        Scanner keyboard;
 
-    do {
-      System.out.print( "Enter start and end years: " );
-      yLow = keyboard.nextInt();
-      yHigh = keyboard.nextInt();
-      yLow = Math.max( yLow, Const.FIRST_YEAR );
-      yHigh = Math.min( yHigh, Const.LAST_YEAR );
+        keyboard = new Scanner(System.in);
 
-      System.out.print( "Enter start and end months: " );
-      mLow = keyboard.nextInt();
-      mHigh = keyboard.nextInt();
-      mLow = Math.max( 1, mLow );
-      mHigh = Math.min( 12, mHigh );
+        do {
+            System.out.print("Enter start and end years: ");
+            yLow = keyboard.nextInt();
+            yHigh = keyboard.nextInt();
+            yLow = Math.max(yLow, Const.FIRST_YEAR);
+            yHigh = Math.min(yHigh, Const.LAST_YEAR);
 
-      System.out.print( "Enter start and end days: " );
-      dLow = keyboard.nextInt();
-      dHigh = keyboard.nextInt();
-      dLow = Math.max( 1, dLow );
-      dHigh = Math.min( 31, dHigh );
+            System.out.print("Enter start and end months: ");
+            mLow = keyboard.nextInt();
+            mHigh = keyboard.nextInt();
+            mLow = Math.max(1, mLow);
+            mHigh = Math.min(12, mHigh);
 
-      data.explore( yLow, yHigh, mLow, mHigh, dLow, dHigh );
-      System.out.print( "Try again (y/n)? " );
-      w = keyboard.next().toLowerCase();
-    } while ( w.startsWith( "y" ) );
-  }
+            System.out.print("Enter start and end days: ");
+            dLow = keyboard.nextInt();
+            dHigh = keyboard.nextInt();
+            dLow = Math.max(1, dLow);
+            dHigh = Math.min(31, dHigh);
+
+            data.explore(yLow, yHigh, mLow, mHigh, dLow, dHigh);
+            System.out.print("Try again (y/n)? ");
+            w = keyboard.next().toLowerCase();
+        } while (w.startsWith("y"));
+        keyboard.close();
+    }
 }
