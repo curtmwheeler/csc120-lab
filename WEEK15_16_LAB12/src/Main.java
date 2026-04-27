@@ -25,9 +25,7 @@ public class Main {
             input = keyboard.next();
         } while (input.toLowerCase().startsWith("y"));
         System.out.println("Goodbye.");
-    }
-
-    private static Board theBoard;
+    } // end of main method
 
     /**
      * play
@@ -49,14 +47,18 @@ public class Main {
         }
 
         int player = 1;
+        boolean gameOver = false;
 
-        while (true) {
+        while (!gameOver) {
             board.print();
-            if (player == 1 || (level == 0 && player == 2)) {
+            if (board.isAllFull()) {
+                System.out.println("Draw.");
+                gameOver = true;
+            } else if (player == 1 || level == 0) {
                 System.out.print("Enter your move > ");
                 if (keyboard.hasNextInt()) {
                     int col = keyboard.nextInt();
-                    if (col < 0 || col > 6) {
+                    if (col < 0 || col >= COLNUM) {
                         System.out.println("Invalid column.");
                         continue;
                     }
@@ -70,10 +72,9 @@ public class Main {
                 }
             } else if (player == 2) {
                 int col;
-                int winCol = -1,
-                    blockCol = -1;
+                boolean moveMade = false;
 
-                while (true) {
+                while (!moveMade) {
                     // Default column selection
                     col = (int) (Math.random() * COLNUM); // Range: [0, 6]
 
@@ -98,19 +99,19 @@ public class Main {
                         }
                     }
                     System.out.printf("Computer > %d%n", col);
-                    if (board.add(col, 2)) break;
+                    if (board.add(col, 2)) moveMade = true;
                 }
             }
 
             // Check if there is a winner
-            if (board.isWinner(player)) {
+            if (!gameOver && board.isWinner(player)) {
                 board.print();
                 System.out.println("Player " + player + " wins!");
-                return;
+                gameOver = true;
             }
 
             // Coerces flipping from 1 -> 2 on each iteration (Ex: Start: 1 -> 3 - 1 = 2 -> 3 - 2 = 1)
-            player = 3 - player;
-        }
-    }
+            if (!gameOver) player = 3 - player;
+        } // end of while loop
+    } // end of oneGame method
 }

@@ -92,6 +92,7 @@ public class Board {
      * @param	col	the column index
      */
     public int getHeight(int col) {
+        if (col < 0 || col >= COLNUM) return -1;
         return height[col];
     }
 
@@ -100,6 +101,7 @@ public class Board {
      * @param	col	the column index
      */
     public boolean isOpen(int col) {
+        if (col < 0 || col >= COLNUM) return false;
         return height[col] < ROWNUM;
     }
 
@@ -123,6 +125,7 @@ public class Board {
      * @param	col	the column index
      */
     public int getTop(int col) {
+        if (col < 0 || col >= COLNUM || getHeight(col) == 0) return -1;
         return table[col][getHeight(col) - 1];
     }
 
@@ -157,7 +160,6 @@ public class Board {
      * @return	true if the player has won; false otherwise
      */
     public boolean isWinner(int player) {
-        String p = STRING_LIST[player];
         int[][] directions = {
             { 1, 0 }, // horizontal
             { 0, 1 }, // vertical
