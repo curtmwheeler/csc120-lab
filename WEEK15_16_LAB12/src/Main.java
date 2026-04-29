@@ -100,8 +100,8 @@ public class Main {
                     }
                     System.out.printf("Computer > %d%n", col);
                     if (board.add(col, 2)) moveMade = true;
-                }
-            }
+                } // end of if (level >= 2)
+            } // end of if (level >= 1)
 
             // Check if there is a winner
             if (!gameOver && board.isWinner(player)) {

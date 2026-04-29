@@ -54,13 +54,15 @@ public class Board {
     //////////////////////////////////////////////////////
     public int[][] table;
     public int[] height;
+    public int size;
 
     /**
      * Constructor
      */
     public Board() {
-        table = new int[COLNUM][ROWNUM];
-        height = new int[COLNUM];
+        this.table = new int[COLNUM][ROWNUM];
+        this.height = new int[COLNUM];
+        this.size = 0;
     }
 
     /**
@@ -117,6 +119,7 @@ public class Board {
         }
         table[col][getHeight(col)] = player;
         height[col]++;
+        size++;
         return true;
     }
 
@@ -133,12 +136,7 @@ public class Board {
      * @return if the board is full
      */
     public boolean isAllFull() {
-        for (int i = 0; i < COLNUM; i++) {
-            if (getHeight(i) < ROWNUM) {
-                return false;
-            }
-        }
-        return true;
+        return this.size == COLNUM * ROWNUM;
     }
 
     public void print() {
